@@ -43,7 +43,7 @@ def place_county_name(county_name, county_data):
     t.penup()
     county_info = county_data[county_data.County.str.lower() == county_name]
     t.goto(int(county_info.x), int(county_info.y))
-    t.write(county_name.capitalize(), align="center")
+    t.write(county_name.capitalize())
 
 
 def main():
