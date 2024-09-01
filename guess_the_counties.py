@@ -13,6 +13,10 @@ def setup_screen():
     """Sets up the turtle screen with the Ireland map image."""
     screen = turtle.Screen()
     screen.title("Irish County Game")
+    # Access the underlying tkinter root window
+    root = screen._root
+    # Set the window to full screen
+    root.attributes('-fullscreen', True)
     turtle.addshape(IMAGE_PATH)
     turtle.shape(IMAGE_PATH)
     return screen
@@ -70,7 +74,7 @@ def main():
     # Setup screen and read data
     screen = setup_screen()
     county_data = read_county_data(COUNTIES_DATA_PATH)
-
+    root = screen._root
     # Initialize variables
     irish_county_list = set(county_data.County.str.lower().to_list())
     named_counties = set()
@@ -82,6 +86,7 @@ def main():
         if user_answer == "exit":
             missing_counties = [county.capitalize() for county in irish_county_list if county not in named_counties]
             write_missing_counties(missing_counties, county_data)
+            root.destroy()  # Destroy the main window
             break
         elif user_answer in named_counties:
             messagebox.showinfo("Already Guessed", "You've already guessed that county! Try another one.")
