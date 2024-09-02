@@ -102,3 +102,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# def get_county_coordinates(x, y):
+#     print(x, y)
+#
+# turtle.onscreenclick(get_county_coordinates)
+
+#user_answer = screen.textinput(title="Name a County", prompt="Enter the name of a county")
