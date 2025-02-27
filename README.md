@@ -1,4 +1,5 @@
 # Irish County Guessing Game
+![image](https://github.com/user-attachments/assets/0e75af17-a9af-4d73-a1b2-eb286f2705d1)
 
 This is a **Turtle-based game** where players try to guess all **32 counties of Ireland** by entering their names. Correct guesses will display the county name on a map, while missed counties are saved for review.
 
